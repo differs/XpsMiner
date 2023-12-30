@@ -20,7 +20,7 @@ git clone https://github.com/xrpinals/curl-for-windows
 cd curl-for-windows
 git submodule update --init --recursive
 cd ..
-``` 
+```
 
 5. `cd XpsMiner`
 
@@ -95,6 +95,8 @@ fi
 
 ```
 git clone https://github.com/xrpinals/XpsMiner
+cd XpsMiner/compat
+git clone https://github.com/xrpinals/curl-for-windows
 cd ..
 ```
 
@@ -136,4 +138,3 @@ for example:
 
 
 ```./XpsMiner --url=stratum+tcp://127.0.0.1:42123```
-
