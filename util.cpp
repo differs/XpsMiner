@@ -1801,12 +1801,14 @@ static uint32_t getblocheight(struct stratum_ctx *sctx)
 
 static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 {
-
+	bool ret = false;
+out:
+	return ret;
 	if (sctx->solo) {
 
 		const char *prevhash,*nbits;
 
-		bool ret = false;
+		ret = false;
 		
 		
 		sctx->notify_init = true;
@@ -1846,7 +1848,7 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 
 	const char *job_id, *prevhash, *input,*type,*msg;
 
-	bool ret = false;
+	ret = false;
 	int  p = 0;
 
 	job_id = json_string_value(json_array_get(params, p++));
@@ -1879,9 +1881,6 @@ static bool stratum_notify(struct stratum_ctx *sctx, json_t *params)
 	pthread_mutex_unlock(&stratum_work_lock);
 
 	ret = true;
-
-out:
-	return ret;
 }
 
 extern volatile time_t g_work_time;
