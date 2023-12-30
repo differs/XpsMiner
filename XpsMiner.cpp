@@ -2606,7 +2606,7 @@ static void show_usage_and_exit(int status)
 void parse_arg(int key, char *arg)
 {
 	char *p = arg;
-	char *tmp = nullptr;
+	char *tmp = NULL;
 	int v, i;
 	uint64_t ul;
 	double d;
