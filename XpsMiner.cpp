@@ -195,9 +195,9 @@ bool conditional_pool_rotate = false;
 // current connection
 char *rpc_user = NULL;
 char *rpc_pass;
-char *rpc_url = "stratum+tcp://127.0.0.1:42123";
+const char *rpc_url = "stratum+tcp://127.0.0.1:42123";
 char *short_url = NULL;
-char *default_user_name = "xpsminer001";
+const char *default_user_name = "xpsminer001";
 
 struct stratum_ctx stratum = { 0 };
 
